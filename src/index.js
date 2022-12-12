@@ -11,23 +11,44 @@ import { stateReducer, taskarr } from './Reducer';
 import { stateContext } from './Context';
 import Payment from './Payment';
 import Pay from './Pay';
+import Form from './Form';
 // import Server from './Server';
 
  const Routesrender = ()=>{
   const [state, dispatch] = useReducer(stateReducer,taskarr);
 return(
   <stateContext.Provider value={{state, dispatch}}>
-  <BrowserRouter>
-  <Routes>
+  <BrowserRouter>{
       
+        state?.islogin?<Routes>
+        {/* <Route path='/' element={<Form1 />}></Route> */}
+        <Route path='/' element={<Home />}></Route>
+        <Route path='order' element={<Order />}></Route>
+        <Route path='payment' element={<Payment />}></Route>
+    <Route path='pay' element={<Pay/>}></Route>
+        <Route path='*' element={<Navigate to ="/" />}></Route>
+        
+      </Routes>:<Routes>
+        <Route path='/form' element={<Form />}></Route>
+        <Route path='*' element={<Navigate to ="/form" />}></Route>
+
+       
+        
+      </Routes>
+       }
+
+  
+  {/* <Routes> */}
+{/*       
     <Route path='/' element={<Home />}></Route>
     <Route path='order' element={<Order />}></Route>
     <Route path='payment' element={<Payment />}></Route>
     <Route path='pay' element={<Pay/>}></Route>
+    <Route path='form1' element={<Form1/>}></Route>
     {/* <Route path='server' element={<Server/>}></Route> */}
     
   
-    </Routes>
+    {/* </Routes> */} 
      
   </BrowserRouter>
   </stateContext.Provider>

@@ -68,76 +68,16 @@ const Payment = () => {
                   Rs.
                   {item.price}
                 </h5>
-                <Button variant="primary" onClick={handleShow}>
-                  Make Payment
-                </Button>
+                <a href="https://rzp.io/l/qrXSCRiI">  Make Payment</a>
+               
               </div>
             </div>
           </div>
         );
       })}
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Payment </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <input
-            placeholder="Enter card Number"
-            type={"number"}
-            onChange={getcardDetails}
-            name="cards"
-            value={setnumber}
-          />
-          <br />
-          <input
-            placeholder="Expiry Date"
-            type={"month"}
-            min="2018-03"
-            onChange={getcardDetails}
-            name="carddate"
-            value={setexpdate}
-          />
-          <br />
-
-          <input
-            placeholder="Enter cvv"
-            type={"number"}
-            onChange={getcardDetails}
-            name="cardcvv"
-            value={setcvv}
-          />
-        </Modal.Body>
-        <Modal.Footer>
-         
-          <Button variant="primary" onClick={handleClose}>
-            Proceed
-          </Button>
-        </Modal.Footer>
-      </Modal>
 
       
-      <Modal showe={showe} onHide={handleClosed}>
-        <Modal.Header >
-          <Modal.Title>OTP Verification </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <input
-            placeholder="Enter card Number"
-            type={"number"}
-            onChange={getcardDetails}
-            name="cards"
-            value={setnumber}
-          />
-         
-        </Modal.Body>
-        <Modal.Footer>
-         
-          {/* <Button variant="primary" onClick={handleClosed}>
-            Procee
-          </Button> */}
-        </Modal.Footer>
-      </Modal>
     </div>
   );
 };

@@ -9,6 +9,12 @@ export const taskarr = {
             tasks: action.payload,
           };
     }
+
+    else if (action.type === "islogon") {
+      console.log("action", state, action);
+      return { ...state, islogin:!state.islogin}
+       
+      }
    else if(action.type==="topayment"){
     console.log(state,action.payload);
     return {
