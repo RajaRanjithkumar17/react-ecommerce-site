@@ -23,5 +23,9 @@ export const taskarr = {
     };
     }
 
+    else if(action.type==="rrr"){
+      console.log("red");
+    }
+
 
   }  
